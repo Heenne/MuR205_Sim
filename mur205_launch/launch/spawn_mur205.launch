@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <!--Variables for the robot0-->
+    <arg name="robot_name" />
+    <arg name="robot_namespace" />
+    <arg name="robot_tf" />
+    <arg name="x_pos" />
+    <arg name="y_pos" />
+    <arg name="yaw_rot" />
+
+    <group ns="$(arg robot_namespace)">
+        <include file="$(find mur205_launch)/launch/mur205.launch">
+            <arg name="robot_name" value="$(arg robot_name)"/>
+            <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+            <arg name="tf_prefix" value="$(arg robot_tf)"/>
+            <arg name="init_pose" value="-x $(arg x_pos) -y $(arg y_pos) -Y $(arg yaw_rot)"/>
+        </include>
+    </group>
+</launch>

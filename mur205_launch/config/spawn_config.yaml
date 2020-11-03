@@ -1,0 +1,12 @@
+robot_name:robot0
+x:0.0
+y:0.0
+yaw:0.0
+robot_name:robot1
+x:2.0
+y:0.0
+yaw:3.141
+robot_name:robot2
+x:5.0
+y:0.0
+yaw:3.141
