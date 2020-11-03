@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Start the simulation environment
-terminator -e "roslaunch mir_ur5 system_sim.launch"&
+terminator -e "roslaunch mur205_launch system_sim.launch"&
 
 sleep 3
 

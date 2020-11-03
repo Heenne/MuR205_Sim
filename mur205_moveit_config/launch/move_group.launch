@@ -4,7 +4,7 @@
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix"
-	   value="gdb -x $(find mir_ur5_moveit_config)/launch/gdb_settings.gdb --ex run --args" />
+	   value="gdb -x $(find mur205_moveit_config)/launch/gdb_settings.gdb --ex run --args" />
 
   <arg name="robot_name"/>
   <arg name="robot_namespace"/>
@@ -42,18 +42,18 @@
   -->
 
   <!-- load URDF, SRDF and joint_limits configuration -->
-  <include file="$(find mir_ur5_moveit_config)/launch/planning_context.launch">
+  <include file="$(find mur205_moveit_config)/launch/planning_context.launch">
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
   <!-- Planning Functionality -->
-  <include ns="move_group" file="$(find mir_ur5_moveit_config)/launch/planning_pipeline.launch.xml">
+  <include ns="move_group" file="$(find mur205_moveit_config)/launch/planning_pipeline.launch.xml">
     <arg name="pipeline" value="$(arg pipeline)" />
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
   <!-- Trajectory Execution Functionality -->
-  <include ns="move_group" file="$(find mir_ur5_moveit_config)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
+  <include ns="move_group" file="$(find mur205_moveit_config)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
     <arg name="moveit_controller_manager" value="MiR200_UR5" unless="$(arg fake_execution)"/>
     <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>
@@ -61,7 +61,7 @@
   </include>
 
   <!-- Sensors Functionality -->
-  <include ns="move_group" file="$(find mir_ur5_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
+  <include ns="move_group" file="$(find mur205_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="MiR200_UR5" />
   </include>
 
