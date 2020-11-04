@@ -34,7 +34,14 @@ Before trying to start any of the launch files or scripts in this repository, pl
 `mur205_navigation`: Contains all files related to the navigation (move_base) of the MiR200
 
 ## Installation
+Clone this repository into a catkin workspace (all following code snippets will be done with the catkin workspace named 'catkin_ws'):
 
+`$ cd ~/catkin_ws`
+
+`$ git clone https://github.com/Heenne/MuR205_Sim.git`
+
+After cloning execute the `$ catkin_make` command in the catkin_ws.
 
 ## Usage
+
 
