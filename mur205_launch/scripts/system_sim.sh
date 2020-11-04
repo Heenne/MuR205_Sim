@@ -4,7 +4,8 @@ get_index_of_colon() {
     return `expr index "$1" :`
 }
 
-filename='../config/spawn_config.yaml'
+script_dir="$(dirname "$0")"
+filename=$script_dir'/../config/spawn_config.yaml'
 
 robot_name="Robot0"
 x_pos="0.111"

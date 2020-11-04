@@ -26,5 +26,5 @@
     <!-- <node pkg="plotjuggler" type="PlotJuggler" name="my_plot_Juggler" args="" /> -->
 
     <!--Launch robot(s) into the world-->
-    <!-- <include file="$(find mur205_launch)/launch/spawn_robots.launch"/> -->
+    <!-- <include file="$(find mur205_launch)/launch/helper/spawn_robots.launch"/> -->
 </launch>
