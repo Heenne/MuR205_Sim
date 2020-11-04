@@ -46,13 +46,22 @@ After cloning execute the command: `$ catkin_make` in the catkin_ws.
 This chapter is separated in two sections. First chapter explains the usage of the script that automatically launches the simulation environment and spawns the configurated number of robots. Second chapter explains the manuall usage of the different launch files to get the MuR205 in Gazebo.
 ### Automatic
 1. Specify the MuR205 robots that should be spawned into the world. For each robot the following lines (comments are not necessary) have to be used:
+
     ```
     robot_name:robot0 # Name of the robot that is also used to generate the namespace and tf_prefix
     x:0.0 # x coordinate of the MiR200 robot (base_link will be positioned)
     y:0.0 # y coordinate of the MiR200 robot (base_link will be positioned)
     yaw:0.0 # yaw rotation of the MiR200 robot (rotation around z-axis of the base_link coordinate system)
     ```
-2. **IMPORTANT**: Use "Terminal" (**NOT** Terminator) for the following commands.
+    
+2. **IMPORTANT**: Open and use "Terminal" (**NOT** Terminator) for the following commands.
 3. Launch the script `system_sim.sh` that is located in the `mur205_launch`-package and in the scripts folder
 
 ### Manual
+1. Launch the environment (Gazebo, map server)
+
+    ```roslaunch mur205_launch system_sim.launch```
+
+2. Spawn a MuR205 robot into the environment with the `spawn_mur205.launch`-file. Notice all parameters that have to set for the launch-file to work!
+
+    ```roslaunch mur205_launch spawn_mur205.launch robot_name:=<INSERT ROBOT NAME> robot_namespace:=<INSERT ROBOT NAMESPACCE> tf_prefix:=<INSERT ROBOT PREFIX> x_pos:=<INSERT X POSITION (Default=0.0)> y_pos:=<INSERT Y POSITION (Default=0.0)> yaw_rot:=<INSERT YAW ROTATION (Default=0.0)>```
