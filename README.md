@@ -40,8 +40,19 @@ Clone this repository into a catkin workspace (all following code snippets will 
 
 `$ git clone https://github.com/Heenne/MuR205_Sim.git`
 
-After cloning execute the `$ catkin_make` command in the catkin_ws.
+After cloning execute the command: `$ catkin_make` in the catkin_ws.
 
 ## Usage
+This chapter is separated in two sections. First chapter explains the usage of the script that automatically launches the simulation environment and spawns the configurated number of robots. Second chapter explains the manuall usage of the different launch files to get the MuR205 in Gazebo.
+### Automatic
+1. Specify the MuR205 robots that should be spawned into the world. For each robot the following lines (comments are not necessary) have to be used:
+    ```
+    robot_name:robot0 # Name of the robot that is also used to generate the namespace and tf_prefix
+    x:0.0 # x coordinate of the MiR200 robot (base_link will be positioned)
+    y:0.0 # y coordinate of the MiR200 robot (base_link will be positioned)
+    yaw:0.0 # yaw rotation of the MiR200 robot (rotation around z-axis of the base_link coordinate system)
+    ```
+2. **IMPORTANT**: Use "Terminal" (**NOT** Terminator) for the following commands.
+3. Launch the script `system_sim.sh` that is located in the `mur205_launch`-package and in the scripts folder
 
-
+### Manual
