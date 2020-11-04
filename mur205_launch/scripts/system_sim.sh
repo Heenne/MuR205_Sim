@@ -10,7 +10,7 @@ script_dir="$(dirname "$0")"
 filename=$script_dir'/../config/spawn_config.yaml'
 
 # Initialize the params used to spawn a robot
-robot_name="Robot0"
+robot_name="robot0"
 x_pos="0.111"
 y_pos="0.222"
 yaw_rot="0.333"
@@ -48,7 +48,7 @@ while read p; do
         echo "X: $x_pos | Y: $y_pos | yaw: $yaw_rot"
 
         # Call launch file for spawning the mobile robot. Also hand over every parameter that is necessary.
-        terminator -e "roslaunch mur205_launch spawn_mur205.launch robot_name:=$robot_name robot_namespace:=$robot_namespace robot_tf:=$robot_tf_prefix x_pos:=$x_pos y_pos:=$y_pos yaw_rot:=$yaw_rot"&
+        terminator -e "roslaunch mur205_launch spawn_mur205.launch robot_name:=$robot_name robot_namespace:=$robot_namespace tf_prefix:=$robot_tf_prefix x_pos:=$x_pos y_pos:=$y_pos yaw_rot:=$yaw_rot"&
         sleep 3
     fi
 done < $filename
