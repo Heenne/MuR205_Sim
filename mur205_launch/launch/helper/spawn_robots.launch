@@ -17,23 +17,18 @@
     <arg name="robot4_namespace" value="$(arg robot4_name)_ns"/>
     <arg name="robot4_tf" value="$(arg robot4_name)_tf/"/>  -->
     
+    <include file="$(find mur205_launch)/launch/spawn_mur205.launch">
+        <arg name="robot_name" value="$(arg robot1_name)"/>
+        <arg name="robot_namespace" value="$(arg robot1_namespace)"/>
+        <arg name="tf_prefix" value="$(arg robot1_tf)"/>
+    </include>
 
-    <group ns="$(arg robot1_namespace)">
-        <include file="$(find mur205_launch)/launch/mur205.launch">
-            <arg name="robot_name" value="$(arg robot1_name)"/>
-            <arg name="robot_namespace" value="$(arg robot1_namespace)"/>
-            <arg name="tf_prefix" value="$(arg robot1_tf)"/>
-        </include>
-    </group>
-
-    <group ns="$(arg robot2_namespace)">
-        <include file="$(find mur205_launch)/launch/mur205.launch">
-            <arg name="robot_name" value="$(arg robot2_name)"/>
-            <arg name="robot_namespace" value="$(arg robot2_namespace)"/>
-            <arg name="tf_prefix" value="$(arg robot2_tf)"/>
-            <arg name="init_pose" value="-x 2 -y 0 -Y 3.141"/>
-        </include>
-    </group>
+    <include file="$(find mur205_launch)/launch/spawn_mur205.launch">
+        <arg name="robot_name" value="$(arg robot2_name)"/>
+        <arg name="robot_namespace" value="$(arg robot2_namespace)"/>
+        <arg name="tf_prefix" value="$(arg robot2_tf)"/>
+        <arg name="init_pose" value="-x 2 -y 0 -Y 3.141"/>
+    </include>
 
     <!-- <group ns="$(arg robot3_namespace)">
         <include file="$(find mur205_launch)/launch/mur205.launch">
