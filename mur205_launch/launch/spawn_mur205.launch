@@ -10,8 +10,6 @@
       <arg name="yaw_rot" default="0.0"/>
       <arg name="init_pose" default="-x $(arg x_pos) -y $(arg y_pos) -Y $(arg yaw_rot) -z 0.0"/>
 
-      <arg name="local_planner" default="dwa" doc="Local planner can be either dwa, eband, base, teb or pose" />
-
       <arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
 
       <!-- By default, hide joint_state_publisher's GUI -->
@@ -60,8 +58,7 @@
             </include>
 
             <!-- Navigation with the navigation stack -->
-            <include file="$(find mur205_navigation)/launch/move_base.xml">
-                  <arg name="local_planner" value="$(arg local_planner)"/>
+            <include file="$(find mur205_navigation)/launch/move_base_flex.launch">
                   <arg name="tf_prefix" value="$(arg tf_prefix)"/>
             </include>
 

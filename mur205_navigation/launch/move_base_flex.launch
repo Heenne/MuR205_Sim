@@ -1,0 +1,26 @@
+<launch>
+  <arg name="tf_prefix" default="" doc="Prefix used for robot tf frames" /> <!-- used in the config files -->
+
+  <!-- Move Base Flex -->
+  <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" respawn="false" name="move_base_flex" output="screen">
+    <param name="tf_timeout" value="1.5"/>
+    <param name="planner_max_retries" value="3"/>
+    <param name="SBPLLatticePlanner/primitive_filename" value="$(find mir_navigation)/mprim/unicycle_highcost_5cm.mprim" />
+    <rosparam file="$(find mir_navigation)/config/move_base_flex_common_params.yaml" command="load"/>
+    <rosparam file="$(find mir_navigation)/config/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find mur205_navigation)/config/local_planner_params.yaml" command="load" subst_value="true"/>
+    <rosparam file="$(find mir_navigation)/config/recovery_behaviors.yaml" command="load" />
+    <rosparam file="$(find mur205_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" subst_value="true"/>
+    <rosparam file="$(find mur205_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" subst_value="true"/>
+    <rosparam file="$(find mir_navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mur205_navigation)/config/local_costmap_params.yaml" command="load" subst_value="true"/>
+
+    <remap from="cmd_vel" to="mobile_base_controller/cmd_vel"/>
+    <remap from="odom" to="mobile_base_controller/odom"/>
+    <remap from="map" to="/map" />
+    <remap from="odom" to="odom_comb" />
+  </node>
+
+  <node pkg="mir_navigation" type="move_base_legacy_relay.py" name="move_base_legacy_relay" output="screen">
+  </node>
+</launch>
