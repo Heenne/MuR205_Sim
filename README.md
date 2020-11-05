@@ -1,7 +1,7 @@
 # MuR205_Sim
 The MuR205_Sim repository contains all additional files and descriptions to launch the MuR205 in the simulation. Many files are dependend on other repositories (see [Prerequisites](#Prerequisites)). All files in this repository are necessary to use the mobile robot plattform MiR200 in combination with the robot arm UR5. Additionally all files where modified so multiple robots can be spawned in different namespaces with different tf prefixes.
 
-![MuR205](https://raw.githubusercontent.com/Heenne/MuR205_Sim/main/docs/images/MuR205.png?token=AL7WPBEKF6SGOTWZXXOFWOK7UKCO2)
+![MuR205](https://github.com/Heenne/MuR205_Sim/blob/main/docs/images/MuR205.png)
 
 ## Table of contents
 [Prerequisites](#Prerequisites)
