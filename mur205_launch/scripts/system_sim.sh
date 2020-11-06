@@ -49,7 +49,7 @@ while read p; do
 
         # Call launch file for spawning the mobile robot. Also hand over every parameter that is necessary.
         terminator -e "roslaunch mur205_launch spawn_mur205.launch robot_name:=$robot_name robot_namespace:=$robot_namespace tf_prefix:=$robot_tf_prefix x_pos:=$x_pos y_pos:=$y_pos yaw_rot:=$yaw_rot"&
-        sleep 3
+        sleep 15
     fi
 done < $filename
 $SHELL
