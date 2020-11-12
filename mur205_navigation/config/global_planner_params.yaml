@@ -1,0 +1,35 @@
+planners:
+  - name: 'RelaxedAStar'
+    type: 'global_planner/RelaxedAStar'
+
+planner_patience: 10.0
+
+# RelaxedAStar:
+#   allow_unknown: true
+
+# GlobalPlanner:
+#   allow_unknown: true
+#   default_tolerance: 0.0
+#   visualize_potential: true
+#   #######Set parameters#############
+#   use_dijkstra: true #1#true #If true, use dijkstra's algorithm. Otherwise, A*. 
+#   use_quadratic: true #2#true #If true, use the quadratic approximation of the ##potential##. Otherwise, use a simpler calculation. 
+#   use_grid_path: false #3#false #If true, create a path that follows the grid boundaries. Otherwise, use a gradient descent method. 
+#   old_navfn_behaviour: false
+#   lethal_cost: 253
+#   neutral_cost: 66
+#   cost_factor: 0.55
+#   publish_potential: true
+#   orientation_mode: 0.0
+#   orientation_window_size: 1.0
+
+# SBPLLatticePlanner:
+#   planner_type: 'ARAPlanner'
+#   allocated_time: 3.0 # default: 10.0 #The amount of time given to the planner to find a solution.
+#   initial_epsilon: 3.0 # The larger this value is the faster the search tends to find a solution
+#   environment_type: 'XYThetaLattice' # The only environment supported
+#   forward_search: false # default is false
+#   # NOTE: param 'primitive_filename'. This needs to be set to the path to 'ceres_navigation/mprim/ceres_5cm.mprim'
+#   # You may put it in the mprim.yaml file, which is ignored by git, so everybody can setup his own path.
+#   nominalvel_mpersecs: 0.4
+#   timetoturn45degsinplace_secs: 0.3
