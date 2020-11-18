@@ -4,8 +4,8 @@ planners:
 
 planner_patience: 10.0
 
-# RelaxedAStar:
-#   allow_unknown: true
+RelaxedAStar:
+  default_tolerance: 0.1
 
 # GlobalPlanner:
 #   allow_unknown: true
