@@ -42,7 +42,7 @@ while read p; do
     # Show message with the info for one robot that will be spawned
     if (( counter == 0 )); then
         robot_namespace=$robot_name"_ns"
-        robot_tf_prefix=$robot_name"_tf"
+        robot_tf_prefix=$robot_name"_tf/"
         echo "Spawning robot with the following parameters:"
         echo "Name: $robot_name | Namespace: $robot_namespace | tf prefix: $robot_tf_prefix"
         echo "X: $x_pos | Y: $y_pos | yaw: $yaw_rot"
