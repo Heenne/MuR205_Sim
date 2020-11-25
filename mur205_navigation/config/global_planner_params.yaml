@@ -6,6 +6,7 @@ planner_patience: 10.0
 
 RelaxedAStar:
   default_tolerance: 0.1
+  neighbor_type: 8
 
 # GlobalPlanner:
 #   allow_unknown: true
