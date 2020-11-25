@@ -6,11 +6,11 @@ The MuR205_Sim repository contains all additional files and descriptions to laun
 ## Table of contents
 [Prerequisites](#Prerequisites)
 
-[Structure of Repository](<#Structure of Repository>)
-
 [Installation](#Installation)
 
 [Usage](#Usage)
+
+[Structure of Repository](<#Structure of Repository>)
 
 ## Prerequisites
 Before trying to start any of the launch files or scripts in this repository, please make sure to download, install and correctly configure the following repositories:
@@ -21,17 +21,6 @@ Before trying to start any of the launch files or scripts in this repository, pl
 | MoveIt | This package is necessary to move the robot arm in the simulation environment Gazebo | `$ sudo apt-get install ros-$ROS_DISTRO-moveit` |
 | MoveIt Visual Tools | This package is necessary to add some Panels to RVIZ to get the full MoveIt funcionality | `$ sudo apt-get install ros-$ROS_DISTRO-moveit-visual-tools ` |
 | Terminator | This terminal is needed so the shell script can open additional terminal windows | `$ sudo apt-get install terminator` |
-
-## Structure of Repository
-`mur205_description`: Contains all files that describe the MuR205 robot like the mesh and urdf files.
-
-`mur205_gazebo`: Contains files related to the EKF localization and world.
-
-`mur205_launch`: Contains all launch files to start the simulation and spawn robots.
-
-`mur205_moveit_config`: Contains the configuration that is needed to move the UR5 robot arm that is attached to the MiR200 base.
-
-`mur205_navigation`: Contains all files related to the navigation (move_base) of the MiR200
 
 ## Installation
 Clone this repository into a catkin workspace (all following code snippets will be done with the catkin workspace named 'catkin_ws'):
@@ -65,3 +54,14 @@ This chapter is separated in two sections. First chapter explains the usage of t
 2. Spawn a MuR205 robot into the environment with the `spawn_mur205.launch`-file. Notice all parameters that have to set for the launch-file to work!
 
     ```roslaunch mur205_launch spawn_mur205.launch robot_name:=<INSERT ROBOT NAME> robot_namespace:=<INSERT ROBOT NAMESPACCE> tf_prefix:=<INSERT ROBOT PREFIX> x_pos:=<INSERT X POSITION (Default=0.0)> y_pos:=<INSERT Y POSITION (Default=0.0)> yaw_rot:=<INSERT YAW ROTATION (Default=0.0)>```
+
+## Structure of Repository
+`mur205_description`: Contains all files that describe the MuR205 robot like the mesh and urdf files.
+
+`mur205_gazebo`: Contains files related to the EKF localization and world.
+
+`mur205_launch`: Contains all launch files to start the simulation and spawn robots.
+
+`mur205_moveit_config`: Contains the configuration that is needed to move the UR5 robot arm that is attached to the MiR200 base.
+
+`mur205_navigation`: Contains all files related to the navigation (move_base) of the MiR200
