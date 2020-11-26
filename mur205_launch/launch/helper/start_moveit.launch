@@ -3,6 +3,7 @@
     <arg name="robot_name"/>
     <arg name="tf_prefix"/>
     <arg name="robot_namespace"/>
+    <arg name="moveit_rviz"/>
 
     <!-- Launch of the moveit package for the robot arm -->
 
@@ -20,7 +21,7 @@
     </include>
 
     <!-- Run Rviz and load the default config to see the state of the move_group node -->
-    <include file="$(find mur205_moveit_config)/launch/moveit_rviz.launch">
+    <include file="$(find mur205_moveit_config)/launch/moveit_rviz.launch" if="$(arg moveit_rviz)">
         <arg name="rviz_config" value="$(find mur205_moveit_config)/launch/moveit.rviz"/>
         <arg name="debug" value="false"/>
     </include>

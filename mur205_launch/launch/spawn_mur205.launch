@@ -12,6 +12,8 @@
 
       <arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
 
+      <arg name="moveit_rviz" default="true" /> <!--This parameter controls if the RVIZ window for controlling the robot arm should open. Default is true, so it will open.-->
+
       <!-- By default, hide joint_state_publisher's GUI -->
       <arg name="use_gui" default="false" />
 
@@ -81,6 +83,7 @@
                   <arg name="robot_name" value="$(arg robot_name)"/>
                   <arg name="robot_namespace" value="$(arg robot_namespace)"/>
                   <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+                  <arg name="moveit_rviz" value="$(arg moveit_rviz)"/>
             </include>
       </group>
 </launch>
