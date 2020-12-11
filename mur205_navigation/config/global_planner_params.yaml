@@ -1,8 +1,8 @@
 planners:
-  # - name: 'RelaxedAStar'
-  #   type: 'global_planner/RelaxedAStar'
-  - name: 'AdvancedAStar'
-    type: 'global_planner/AdvancedAStar'
+  - name: 'RelaxedAStar'
+    type: 'global_planner/RelaxedAStar'
+  # - name: 'AdvancedAStar'
+  #   type: 'global_planner/AdvancedAStar'
 
 
 planner_patience: 10.0
@@ -21,13 +21,13 @@ RelaxedAStar:
   # Value 0 means the farthest away from the wall. Value 254 defines a cell where an obstacle is located.
   # The greater this value will be defined the closer the global path will be planed next to walls.
   # Default: 0
-  free_cell_threashold: 0 
+  free_cell_threshold: 0 
 
   # This value specifies different modes for declaring new cells as free and usable cells that will get added to the open list.
   # 0 - This mode only uses the g_scores of the cells. If the score of the selected cell is infinity, the cell will be pushed into the open list
   # 1 - This mode uses the same selection as mode 0. Additionally the curves get analyzed to have a maximal curvature. See: minimal_curve_radius parameter
   # Default: 0
-  free_neighbor_mode: 1
+  free_neighbor_mode: 0
 
   # This parameter is used together with the mode 1 of the free_neighbor_mode.
   # This parameter defines the maximal curvature the global plan should contain during a curve.
