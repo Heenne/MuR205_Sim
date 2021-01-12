@@ -20,7 +20,4 @@
     <remap from="map" to="/map" />
     <!-- <remap from="odom" to="odom_comb" /> -->
   </node>
-
-  <node pkg="mir_navigation" type="move_base_legacy_relay.py" name="move_base_legacy_relay" output="screen">
-  </node>
 </launch>
