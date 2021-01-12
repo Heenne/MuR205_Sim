@@ -1,4 +1,6 @@
 planners:
+  # - name: 'FormationPathPlanner'
+  #   type: 'global_planner/FormationPathPlanner'
   - name: 'RelaxedAStar'
     type: 'global_planner/RelaxedAStar'
   # - name: 'AdvancedAStar'
@@ -6,6 +8,30 @@ planners:
 
 
 planner_patience: 10.0
+
+FormationPathPlanner:
+  # The default tolerance that is used if the tolerance of the received goal is not valid.
+  # Default: 0.2
+  default_tolerance: 0.2
+
+  robot_footprint: [[0.506,-0.32],[0.506,0.32],[-0.454,0.32],[-0.454,-0.32]]
+
+  formation_config:
+    robot0:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      yaw: 0.0
+    robot1:
+      x: -1.0
+      y: 1.0
+      z: 0.0
+      yaw: 0.0
+    robot2:
+      x: -1.0
+      y: -1.0
+      z: 0.0
+      yaw: 0.0
 
 RelaxedAStar:
   # The default tolerance that is used if the tolerance of the received goal is not valid.
