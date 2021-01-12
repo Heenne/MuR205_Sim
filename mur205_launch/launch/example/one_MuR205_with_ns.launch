@@ -4,14 +4,15 @@
     <arg name="robot0_name" default="robot0"/>
     <arg name="robot0_tf_prefix" default="$(arg robot0_name)_tf/"/> <!--Notice the "/", it is important to only add it to the tf_prefix-->
     <arg name="robot0_namespace" default="$(arg robot0_name)_ns"/>
-    <!--Constant values that cant be adjusted from outside the launch file-->
-    <arg name="robot0_moveit_rviz_command_args" value="-d $(find mur205_launch)/rviz/robot0_moveit_config.rviz"/>
-    <arg name="robot0_navigation_rviz_command_args" value="-d $(find mur205_launch)/rviz/robot0_navigation_config.rviz"/>
 
     <!--Start Gazebo with GUI-->
     <arg name="gazebo_gui" default="true"/>
-      
-      <!--Start complete system-->
+
+    <!--Constant values that cant be adjusted from outside the launch file-->
+    <arg name="robot0_moveit_rviz_command_args" value="-d $(find mur205_launch)/rviz/robot0_moveit_config.rviz"/>
+    <arg name="robot0_navigation_rviz_command_args" value="-d $(find mur205_launch)/rviz/robot0_navigation_config.rviz"/>
+  
+    <!--Start complete system-->
     <include file="$(find mur205_launch)/launch/system_sim.launch">
         <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
         <arg name="world_name" value="$(find mir_gazebo)/maps/world/pp_test_5.world"/>
