@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+    <!--Parameter for the robot0 that can be adjusted from outside of the launch file-->
+    <arg name="robot0_name" default="robot0"/> <!--Even if no namespace is selected a robot name has to be set!-->
+    <arg name="robot0_tf_prefix" default="$(arg robot0_name)_tf"/>
+    <arg name="robot0_namespace" default=""/>
+
+    <!--Start Gazebo with GUI-->
+    <arg name="gazebo_gui" default="true"/>
+
+    <!--Constant values that cant be adjusted from outside the launch file-->
+    <arg name="robot0_moveit_rviz_command_args" value="-d $(find mur205_launch)/rviz/no_namespace_moveit_config.rviz"/>
+    <arg name="robot0_navigation_rviz_command_args" value="-d $(find mur205_launch)/rviz/no_namespace_navigation_config.rviz"/>
+  
+    <!--Start complete system-->
+    <include file="$(find mur205_launch)/launch/system_sim.launch">
+        <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+        <arg name="world_name" value="$(find mir_gazebo)/maps/world/pp_test_5.world"/>
+        <arg name="map_file" value="$(find mir_gazebo)/maps/pp_test_5.yaml"/>
+    </include>
+
+    <include file="$(find mur205_launch)/launch/spawn_mur205.launch">
+        <arg name="robot_name" value="$(arg robot0_name)"/>
+        <arg name="robot_namespace" value="$(arg robot0_namespace)"/>
+        <arg name="tf_prefix" value="$(arg robot0_tf_prefix)"/>
+    </include>
+
+    <!--Start rviz for controlling the moveit-->
+    <node name="$(arg robot0_name)_moveit_rviz" pkg="rviz" type="rviz" respawn="false" 
+        args="$(arg robot0_moveit_rviz_command_args)" output="screen">
+        <rosparam command="load" file="$(find mur205_moveit_config)/config/kinematics.yaml"/>
+    </node>
+
+    <node name="$(arg robot0_name)_navigation_rviz" pkg="rviz" type="rviz" respawn="false" 
+        args="$(arg robot0_navigation_rviz_command_args)" output="screen"/>
+</launch>
