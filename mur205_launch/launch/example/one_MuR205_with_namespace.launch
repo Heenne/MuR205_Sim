@@ -35,5 +35,10 @@
 
         <node name="$(arg robot0_name)_navigation_rviz" pkg="rviz" type="rviz" respawn="false" 
             args="$(arg robot0_navigation_rviz_command_args)" output="screen"/>
+
+        <!--This node is necessary to easily set the target position for the move_base_flex package through rviz-->
+        <!--If a different path planner should be used, change the planner that is defined in the relay-->
+        <!--Typically you copy this node to where you need a changed path planner. This one should stay default.-->
+        <node pkg="mir_navigation" type="move_base_legacy_relay.py" name="move_base_legacy_relay" output="screen"/>
     </group>
 </launch>
