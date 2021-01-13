@@ -49,6 +49,9 @@
       <!-- Localization with amcl particle swarm -->
       <include file="$(find mur205_navigation)/launch/amcl.launch">
             <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+            <arg name="initial_pose_x" value="$(arg x_pos)"/>
+            <arg name="initial_pose_y" value="$(arg y_pos)"/>
+            <arg name="initial_pose_a" value="$(arg yaw_rot)"/>
       </include>
 
       <!-- Navigation with the navigation stack -->
