@@ -1,4 +1,4 @@
-controller_frequency: 5      # run controller at 5.0 Hz. This value defines how fast the MiR is getting. Because the time of one cycle times the acceleration is the max valocity the MiR is reaching
+controller_frequency: 2     # run controller at 5.0 Hz. This value defines how fast the MiR is getting. Because the time of one cycle times the acceleration is the max valocity the MiR is reaching
 controller_patience: 15.0    # if the controller failed, clear obstacles and retry; after 15.0 s, abort and replan
 planner_frequency: 0.0       # don't continually replan (only when controller failed)
 planner_patience: 5.0        # if the first planning attempt failed, abort planning retries after 5.0 s...
